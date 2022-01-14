@@ -1,0 +1,63 @@
+Employee type,Full Name,Company email,Reports To Email,Job Title,Departments
+Full Time,Steve Bryant,Steve.bryant@fakecompany.com,Jason.Patterson@fakecompany.com,Director of Customer Support,Customer Support
+Full Time,Geoff Brown,geoff.Brown@fakecompany.com,Jason.Patterson@fakecompany.com,"Vice President of Business Operations, Analytics and FP&A",Finance
+Full Time,Anna Kay,Anna.kay@fakecompany.com,Jason.Patterson@fakecompany.com,Senior Agile Practice Lead,Finance
+Full Time,Ed Houchins,ed.Houchins@fakecompany.com,Jason.Patterson@fakecompany.com,"VP, Accounting & Treasury",Finance
+Full Time,Dave Moody,dave.Moody@fakecompany.com,Jason.Patterson@fakecompany.com,VP Customer Success_DM,Professional Services
+Full Time,Edward James,Edward.james@fakecompany.com,Jason.Patterson@fakecompany.com,Director of Customer Success,Customer Success
+Full Time,Drew Smith,andrew.Smith@fakecompany.com,Steve.bryant@fakecompany.com,Sr. Technical Support Specialist 2,Customer Support
+Full Time,Kendra Fasick,Kendra.fasick@fakecompany.com,Steve.bryant@fakecompany.com,"Team Lead, Client Care",Customer Support
+Full Time,Albert Pike,Albert@fakecompany.com,Steve.bryant@fakecompany.com,Sr. Technical Support Specialist 2,Customer Support
+Full Time,Frank Javed,Frank.javed@fakecompany.com,geoff.Brown@fakecompany.com,"Senior Manager, Sales Strategy and Analysis",Finance
+Full Time,Angela Volk,angela.Volk@fakecompany.com,geoff.Brown@fakecompany.com,Senior Data Analyst,Finance
+Full Time,Carleen Perez,carleen.Perez@fakecompany.com,geoff.Brown@fakecompany.com,Lead FP&A Analyst,Finance
+Full Time,Ashley Fowler,Ashley.fowler@fakecompany.com,Anna.kay@fakecompany.com,Scrum Master & Proj Coordinator,Finance
+Full Time,Danielle Hardy,danielle.Hardy@fakecompany.com,Anna.kay@fakecompany.com,Scrum Master,Finance
+Full Time,Robert Vora,Robert.vora@fakecompany.com,Anna.kay@fakecompany.com,Agile Lead_DM,Finance
+Full Time,Paul Wang,Paul.wang@fakecompany.com,ed.Houchins@fakecompany.com,Senior Accounting Manager,Finance
+Full Time,Matthew Donohue,Matthew.donohue@fakecompany.com,ed.Houchins@fakecompany.com,Collections Specialist,Finance
+Full Time,Donald Will,Donald.will@fakecompany.com,dave.Moody@fakecompany.com,Director of Technical Support_DM,Professional Services
+Full Time,Charlie Wilson,charlie.Wilson@fakecompany.com,dave.Moody@fakecompany.com,"Team Lead, Professional Services",Professional Services
+Full Time,Cory Kelley,cory.Kelley@fakecompany.com,Edward.james@fakecompany.com,"Manager, Customer Success",Customer Success
+Full Time,Jess Everette,jessica.Everette@fakecompany.com,Edward.james@fakecompany.com,"Team Lead, Customer Success",Customer Success
+Full Time,Annabelle Ports,Annabelle@fakecompany.com,Edward.james@fakecompany.com,"Team Lead, Customer Success",Customer Success
+Full Time,David Davidson,david.Davidson@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Customer Support Specialist,Customer Support
+Full Time,James Kurra,James.kurra@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Customer Support Specialist,Customer Support
+Full Time,Chad Story,chad.Story@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Support Specialist II_DM,Customer Support
+Full Time,Paul Jenkins,Paul.jenkins@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Customer Support Specialist,Customer Support
+Full Time,Tim Laruso,tim.Laruso@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Customer Support Specialist,Customer Support
+Full Time,Lana Rusev,alanna.Rusev@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Support Specialist I_DM,Customer Support
+Full Time,Andrea Jacobson,andrea.Jacobson@fakecompany.com,Kendra.fasick@fakecompany.com,Technical Support Specialist II_DM,Customer Support
+Full Time,Xi Yoon,Xi.yoon@fakecompany.com,carleen.Perez@fakecompany.com,FP&A Analyst,Finance
+Full Time,Janet Smith,Janet.smith@fakecompany.com,Paul.wang@fakecompany.com,Senior Accountant,Finance
+Full Time,Ashley Jones,ashley.Jones@fakecompany.com,Paul.wang@fakecompany.com,Billing and Revenue Accountant,Finance
+Full Time,Duyen Peters,duyen.Peters@fakecompany.com,Paul.wang@fakecompany.com,Billing Support Specialist,Finance
+Full Time,Miranda Smart,miranda.Smart@fakecompany.com,Donald.will@fakecompany.com,Digital Form Design Associate_DM,Professional Services
+Full Time,Gershwin Schultz,gershwin.Schultz@fakecompany.com,Donald.will@fakecompany.com,Digital Form Design Associate_DM,Professional Services
+Full Time,Ed Davis,Ed.davis@fakecompany.com,Donald.will@fakecompany.com,Mobile Forms Designer,Professional Services
+Full Time,Michelle Jess,michelle.Jess@fakecompany.com,Donald.will@fakecompany.com,Digital Form Design Associate_DM,Professional Services
+Full Time,Monique Brady,monique.Brady@fakecompany.com,Donald.will@fakecompany.com,Digital Form Design Associate_DM,Professional Services
+Full Time,Meredith Coors,meredith.Coors@fakecompany.com,Donald.will@fakecompany.com,Digital Form Design Associate_DM,Professional Services
+Full Time,Vernique Giambi,vernique.Giambi@fakecompany.com,Donald.will@fakecompany.com,Mobile Forms Builder,Professional Services
+Full Time,Nick Morris,Nick.morris@fakecompany.com,Donald.will@fakecompany.com,Mobile Forms Builder,Professional Services
+Full Time,Lee Prince,Lee.Prince@fakecompany.com,Donald.will@fakecompany.com,Mobile Forms Builder,Professional Services
+Full Time,Shakil Zafir,shakil.Zafir@fakecompany.com,charlie.Wilson@fakecompany.com,Customer Support Engineer - Tier 1,Professional Services
+Full Time,Connie Lept,connie.Lept@fakecompany.com,charlie.Wilson@fakecompany.com,"Solutions Engineer, Analytics",Professional Services
+Full Time,Steve Sprouse,Steve.Sprouse@fakecompany.com,charlie.Wilson@fakecompany.com,Custom PDF Designer,Professional Services
+Full Time,Kelvin Martinson,kelvin.Martinson@fakecompany.com,charlie.Wilson@fakecompany.com,Professional Services Engineer,Professional Services
+Full Time,Tim Kellerson,tim.Kellerson@fakecompany.com,charlie.Wilson@fakecompany.com,Professional Services Engineer II,Professional Services
+Full Time,Lindsay Carnie,lindsay.Carnie@fakecompany.com,charlie.Wilson@fakecompany.com,Professional Services Engineer,Professional Services
+Full Time,Ryan Worst,ryan.Worst@fakecompany.com,charlie.Wilson@fakecompany.com,"Solutions Engineer, Analytics",Inside Sales
+Full Time,Anna Boatman,anna.Boatman@fakecompany.com,cory.Kelley@fakecompany.com,Customer Success Manager,Customer Success
+Full Time,Ann Jansport,ann.Jansport@fakecompany.com,cory.Kelley@fakecompany.com,Senior Customer Success Manager,Customer Success
+Full Time,Faith Atkinson,Faith.Atkinson@fakecompany.com,cory.Kelley@fakecompany.com,Enterprise Customer Success Manager,Customer Success
+Full Time,Reid Jones,reid.Jones@fakecompany.com,cory.Kelley@fakecompany.com,Enterprise Customer Success Manager,Customer Success
+Full Time,Diego Smith,juan.Smith@fakecompany.com,cory.Kelley@fakecompany.com,Enterprise Customer Success Manager,Customer Success
+Full Time,Matt Herschell,matt.Herschell@fakecompany.com,cory.Kelley@fakecompany.com,Senior Customer Success Manager,Customer Success
+Full Time,Francesca Polk,francesca.Polk@fakecompany.com,jessica.Everette@fakecompany.com,Customer Success Manager,Customer Success
+Full Time,Jason Shute,Jason.shute@fakecompany.com,jessica.Everette@fakecompany.com,Customer Success Manager_DM,Customer Success
+Full Time,Ian Yester,ian.Yester@fakecompany.com,jessica.Everette@fakecompany.com,Customer Success Manager,Customer Success
+Full Time,Ava Driven,ava.Driven@fakecompany.com,Annabelle@fakecompany.com,Customer Onboarding Specialist,Customer Success
+Full Time,Hazel Hoover,hazel.Hoover@fakecompany.com,Annabelle@fakecompany.com,Customer Engagement Manager,Customer Success
+Full Time,Dean Remdi,dean.Remdi@fakecompany.com,Annabelle@fakecompany.com,Customer Success Manager,Customer Success
+Full Time,Jason Patterson,Jason.Patterson@fakecompany.com,ceo@fakecompany.com,CFO,Executive
