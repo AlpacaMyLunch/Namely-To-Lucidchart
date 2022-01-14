@@ -113,7 +113,7 @@ class Company():
 
 
     def print(self):
-        print('GoCanvas has {} employees'.format(len(self.employees)))
+        print('This Company has {} employees'.format(len(self.employees)))
 
     def hire(self, employee: Person):
         self.employees.append(employee)
