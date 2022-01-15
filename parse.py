@@ -5,6 +5,8 @@ import sys
 indent = 0
 indent_increment = 8
 
+DATA_FILE = 'sample.csv.template'
+
 class Person():
     def __init__(self, data: dict):
         # Full Name,Company email,Reports To Email,Job Title,Departments
@@ -216,8 +218,19 @@ def indent_print(msg: str):
     ))
 
 def main():
+
+    supervisors_to_pull = []
     
-    data = csv_to_list('sample.csv', track_column_order=True)
+    args = sys.argv[1:]
+    if len(args) == 0:
+        supervisor = input("Please enter the supervisor's email address: ")
+        supervisors_to_pull = [supervisor]
+    
+    else:
+        supervisors_to_pull = args
+
+
+    data = csv_to_list(DATA_FILE, track_column_order=True)
 
 
 
@@ -231,14 +244,42 @@ def main():
 
     company.organize()
 
-    cfo = company.find('Jason.Patterson@fakecompany.com')
-    charlie = company.find('charlie.Wilson@fakecompany.com')
+    if len(supervisors_to_pull) == 1:
 
-    charlie.subordinates_to_csv()
+        supervisor = company.find(supervisors_to_pull[0])
+        if supervisor:
+            supervisor.subordinates_to_csv()
+        else:
+            print("Unable to find {}".format(supervisors_to_pull[0]))
+
+    else:
+
+        output = []
+        supervisor_names = []
+        for supervisor_email in supervisors_to_pull:
+            supervisor = company.find(supervisor_email)
+            if supervisor:
+                output.append(supervisor.raw_data)
+                output.extend(supervisor.all_subordinates(return_people_objects=False))
+                supervisor_names.append(supervisor.full_name)
+            else:
+                print("Unable to find {}".format(supervisor_email))
+
+        if len(output) > 0:
+            list_to_csv(
+                output,
+                '{}.csv'.format(' & '.join(supervisor_names)),
+                preserve_column_order=True
+            )
+
+
+
+
 
 
 if __name__ == '__main__':
     # sys.stdout = open("deleteme.txt", "w")
+
 
     main()
 
