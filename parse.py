@@ -1,11 +1,13 @@
 import csv
 import sys
+import argparse
 
 
 indent = 0
 indent_increment = 8
 
-DATA_FILE = 'sample.csv.template'
+# DATA_FILE = 'sample.csv.template'
+DATA_FILE = 'EVERYONE.csv'
 
 class Person():
     def __init__(self, data: dict):
@@ -35,17 +37,17 @@ class Person():
     def has_direct_reports(self) -> bool:
         return len(self.direct_reports) > 0
 
-    def subordinates_to_csv(self):
+    def subordinates_to_csv(self, single_layer=False):
         """
         Saves a CSV file with everyone who falls under this employee
         Also includes the current employee in the list
         """
 
-        subs = self.all_subordinates(return_people_objects=False)
+        subs = self.subordinates(return_people_objects=False, single_layer=single_layer)
         subs.append(self.raw_data)
         list_to_csv(subs, '{}.csv'.format(self.full_name.replace(' ', '_')), preserve_column_order=True)
 
-    def all_subordinates(self, return_people_objects=True) -> list:
+    def subordinates(self, return_people_objects=True, single_layer=False) -> list:
         """
         Returns a list of ALL subordinates, not just direct reports
         """
@@ -54,17 +56,20 @@ class Person():
         if len(self.direct_reports) == 0:
             return output
         
-        while True:
-            added_new = False
-            for subordinate in output:
-                for employee in subordinate.direct_reports:
-                    if employee not in output:
-                        output.append(employee)
-                        added_new = True
-                        
-            if added_new == False:
-                break
-            
+
+        if single_layer == False:
+            # Go deeper than just the direct reports
+            while True:
+                added_new = False
+                for subordinate in output:
+                    for employee in subordinate.direct_reports:
+                        if employee not in output:
+                            output.append(employee)
+                            added_new = True
+                            
+                if added_new == False:
+                    break
+                
         
 
         if return_people_objects == False:
@@ -217,18 +222,42 @@ def indent_print(msg: str):
         msg
     ))
 
+def parse_arguments():
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument("-e", "--email", dest="email", default="", help="One or more email addresses separated by a space", nargs=argparse.REMAINDER)
+    parser.add_argument('-s', '--single', dest="single_layer", default=False, action="store_true", help="Only go a single layer deep")
+
+    args = parser.parse_args()
+
+    # because we used argparse.REMAINDER for the email
+    # the other flag will not be recognized if it comes after email.
+    # let's check to see if -s or --single is one of the email addresses provided
+    if '-s' or '--single' in args.email:
+        try:
+            args.email.remove('-s')
+        except:
+            pass
+        try:
+            args.email.remove('--single')
+        except:
+            pass
+        args.single_layer = True
+
+    return args
+
 def main():
 
-    supervisors_to_pull = []
+    args = parse_arguments()
     
-    args = sys.argv[1:]
-    if len(args) == 0:
-        supervisor = input("Please enter the supervisor's email address: ")
-        supervisors_to_pull = [supervisor]
+    # only go a single layer deep when gathering subordinates?
+    single_layer = args.single_layer
+    supervisors_to_pull = args.email
     
-    else:
-        supervisors_to_pull = args
-
+    if len(supervisors_to_pull) == 0:
+        supervisor = input("Enter the email address for the supervisor(s): ")
+        supervisors_to_pull = supervisor.split(' ')
+    
 
     data = csv_to_list(DATA_FILE, track_column_order=True)
 
@@ -248,7 +277,7 @@ def main():
 
         supervisor = company.find(supervisors_to_pull[0])
         if supervisor:
-            supervisor.subordinates_to_csv()
+            supervisor.subordinates_to_csv(single_layer)
         else:
             print("Unable to find {}".format(supervisors_to_pull[0]))
 
@@ -260,7 +289,7 @@ def main():
             supervisor = company.find(supervisor_email)
             if supervisor:
                 output.append(supervisor.raw_data)
-                output.extend(supervisor.all_subordinates(return_people_objects=False))
+                output.extend(supervisor.subordinates(return_people_objects=False, single_layer=single_layer))
                 supervisor_names.append(supervisor.full_name)
             else:
                 print("Unable to find {}".format(supervisor_email))
