@@ -6,8 +6,8 @@ import argparse
 indent = 0
 indent_increment = 8
 
-# DATA_FILE = 'sample.csv.template'
-DATA_FILE = 'EVERYONE.csv'
+DATA_FILE = 'sample.csv.template'
+# DATA_FILE = 'EVERYONE.csv'
 
 class Person():
     def __init__(self, data: dict):
