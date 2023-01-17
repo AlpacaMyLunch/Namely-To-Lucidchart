@@ -47,6 +47,7 @@ class Person():
         Also includes the current employee in the list
         """
 
+        print(f'Single layer: {single_layer}')
         subs = self.subordinates(return_people_objects=False, single_layer=single_layer)
         subs.append(self.raw_data)
         list_to_csv(subs, '{}.csv'.format(self.full_name.replace(' ', '_')), preserve_column_order=True)
@@ -241,10 +242,12 @@ def parse_arguments():
     if '-s' or '--single' in args.email:
         try:
             args.email.remove('-s')
+            args.single_layer = True
         except:
             pass
         try:
             args.email.remove('--single')
+            args.single_layer = True
         except:
             pass
         # args.single_layer = True
@@ -280,6 +283,8 @@ def main():
 
 
     company.organize()
+
+
 
     if len(supervisors_to_pull) == 1:
 
