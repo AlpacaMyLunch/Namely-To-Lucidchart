@@ -6,13 +6,17 @@ import argparse
 indent = 0
 indent_increment = 8
 
-DATA_FILE = 'sample.csv.template'
-# DATA_FILE = 'EVERYONE.csv'
+# DATA_FILE = 'sample.csv.template'
+DATA_FILE = '2023.csv'
 
 class Person():
     def __init__(self, data: dict):
         # Full Name,Company email,Reports To Email,Job Title,Departments
-        self.full_name = data['Full Name']
+
+        if 'Full Name' in data:
+            self.full_name = data['Full Name']
+        else:
+            self.full_name = f"{data['First name']} {data['Last name']}"
         self.email = data['Company email']
         self.reports_to = data['Reports To Email']
         self.title = data['Job Title']
@@ -55,7 +59,7 @@ class Person():
         output = self.direct_reports
         if len(self.direct_reports) == 0:
             return output
-        
+
 
         if single_layer == False:
             # Go deeper than just the direct reports
@@ -230,6 +234,7 @@ def parse_arguments():
 
     args = parser.parse_args()
 
+    
     # because we used argparse.REMAINDER for the email
     # the other flag will not be recognized if it comes after email.
     # let's check to see if -s or --single is one of the email addresses provided
@@ -242,7 +247,10 @@ def parse_arguments():
             args.email.remove('--single')
         except:
             pass
-        args.single_layer = True
+        # args.single_layer = True
+    
+    
+
 
     return args
 
@@ -253,7 +261,7 @@ def main():
     # only go a single layer deep when gathering subordinates?
     single_layer = args.single_layer
     supervisors_to_pull = args.email
-    
+
     if len(supervisors_to_pull) == 0:
         supervisor = input("Enter the email address for the supervisor(s): ")
         supervisors_to_pull = supervisor.split(' ')
@@ -276,6 +284,7 @@ def main():
     if len(supervisors_to_pull) == 1:
 
         supervisor = company.find(supervisors_to_pull[0])
+
         if supervisor:
             supervisor.subordinates_to_csv(single_layer)
         else:
